@@ -1,0 +1,27 @@
+﻿@{Console.WriteLine("card " + DateTime.Now);}
+
+<div class="col mb-4">
+    <div class="card">
+        @if (!string.IsNullOrEmpty(CardInfo.ImageUrl))
+        {
+            <img src="@CardInfo.ImageUrl" class="card-img-top" title="@CardInfo.Name">
+        }
+        else
+        {
+            <div class="card-body">
+                <h5 class="card-title">@CardInfo.Name</h5>
+
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+    @code {
+
+        [Parameter]
+        public PokerGames.Web.Models.Card CardInfo { get; set; }
+
+    }

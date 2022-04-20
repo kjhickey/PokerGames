@@ -1,0 +1,31 @@
+﻿@using PokerGames.Web.Models
+@page "/fivecardstud"
+<h3>FiveCardStud</h3>
+<button @onclick="DealCards">
+    Deal Cards
+</button>
+
+@if (table != null)
+{
+    <div class="container">
+        <Hand Player="@table.Player1" />
+        <Hand Player="@table.Player2" />
+    </div>
+}
+
+
+
+
+
+@code {
+
+    private Table table;
+
+    private void DealCards()
+    {
+        table = new Table();
+
+        table.StartNewGame();
+    }
+
+}

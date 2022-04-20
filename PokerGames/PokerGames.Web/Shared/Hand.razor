@@ -1,0 +1,16 @@
+﻿@using PokerGames.Web.Models
+@{Console.WriteLine("hand " + DateTime.Now);}
+
+<div class="row row-cols-5">
+    @foreach (var card in Player.Cards)
+    {
+        <Card CardInfo="@card" />
+    }
+
+</div>
+
+@code {
+
+    [Parameter]
+    public Player Player { get; set; }
+}
